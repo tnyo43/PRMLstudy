@@ -22,7 +22,7 @@ $python DirichletDistribution.py
 ```
 2.3.6 ガウス分布に対するベイズ推定 
 ```shell
-  $python GaussianDistribution.py
+$python GaussianDistribution.py
 ```
 2.3.7 スチューデントのt分布  
 ```shell
