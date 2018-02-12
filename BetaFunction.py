@@ -57,15 +57,22 @@ class BetaFunctionGraph(MyQWidget):
         self.graph.setXRange(0, 1)
         self.graph.setYRange(0, 4)
 
-        self.setGeometry(700, 300, 280, 170)
-        self.setWindowTitle('QSlider')
+        self.labelE = QLabel(self)
+        self.labelE.setGeometry(100, 60, 80, 30)
+        self.labelE.setStyleSheet('color: red')
+
+        self.setWindowTitle('Beta Function')
         self.show()
 
     def changeValue(self):
         xs, ys = p(self.a, self.b)
+        E = self.a / (self.a + self.b)
         self.graph.clear()
-        self.graph.setValue(xs, ys)
+        self.graph.setValue(xs, ys, 'b')
+        self.graph.setValue([E, E], [-1, 10], 'r')
         self.graph.show()
+
+        self.labelE.setText('E[μ]='+ str('%01.2f' % E))
 
     def changeValueA(self, value):
         self.a = value/10+0.1

@@ -43,22 +43,22 @@ class BayesianInferenceGraph(MyQWidget):
         self.graph.setXRange(0, 1)
         self.graph.setYRange(0, 12)
 
-        self.sl_beta = SliderLabel(self, func=self.changeValueBeta, tag="beta=")
-        self.sl_beta.setGeometry(20, 40, 1000, 30)
+        self.slBeta = SliderLabel(self, func=self.changeValueBeta, tag="beta=")
+        self.slBeta.setGeometry(20, 40, 1000, 30)
 
-        self.sl_win = SliderLabel(self, func=self.changeValueWin, tag="win :")
-        self.sl_win.setGeometry(20, 70, 1000, 30)
+        self.slW = SliderLabel(self, func=self.changeValueWin, tag="win :")
+        self.slW.setGeometry(20, 70, 1000, 30)
 
-        self.sl_lose = SliderLabel(self, func=self.changeValueLose, tag="lose :")
-        self.sl_lose.setGeometry(20, 100, 1000, 30)
+        self.slL = SliderLabel(self, func=self.changeValueLose, tag="lose :")
+        self.slL.setGeometry(20, 100, 1000, 30)
 
-        self.label_mode = QLabel(self)
-        self.label_mode.setGeometry(200, 128, 80, 30)
-        self.label_mode.setStyleSheet('color: red')
+        self.labelMode = QLabel(self)
+        self.labelMode.setGeometry(200, 128, 80, 30)
+        self.labelMode.setStyleSheet('color: red')
 
-        self.label_rate = QLabel(self)
-        self.label_rate.setGeometry(200, 158, 80, 30)
-        self.label_rate.setStyleSheet('color: blue')
+        self.labelRate = QLabel(self)
+        self.labelRate.setGeometry(200, 158, 80, 30)
+        self.labelRate.setStyleSheet('color: blue')
 
         self.setGeometry(700, 300, 280, 200)
         self.setWindowTitle('BayesianInference')
@@ -81,8 +81,8 @@ class BayesianInferenceGraph(MyQWidget):
         self.graph.setValue([mode, mode], [0, 100], 'r')
         self.graph.setValue([rate, rate], [0, 100], 'b')
         self.graph.show()
-        self.label_mode.setText("mode:" + str('%01.2f' % mode))
-        self.label_rate.setText("rate:" + str('%01.2f' % rate))
+        self.labelMode.setText("mode:" + str('%01.2f' % mode))
+        self.labelRate.setText("rate:" + str('%01.2f' % rate))
 
     def changeValueBeta(self, value):
         self.beta = value/11+1

@@ -67,12 +67,14 @@ class DirichletDistributionGraph(MyQWidget):
         self.slA2.setGeometry(20, 60, 250, 30)
 
         self.setGeometry(70, 300, 280, 90)
-        self.setWindowTitle('QSlider')
+        self.setWindowTitle('Dirichlet Distribution')
         self.show()
         self.graph = GraphWindow3D(self, title="hoge")
         points = np.array([[x[0]*amplitude-offset, x[1]*amplitude-offset, 0*amplitude] for x in corners])
         self.graph.setPoints(points)
         self.graph.show()
+
+        self.changeValue()
 
     def changeValue(self):
         self.graph.clear()

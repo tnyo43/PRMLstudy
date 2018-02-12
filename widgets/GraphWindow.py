@@ -32,6 +32,8 @@ class GraphWindow(QMainWindow):
         """
         x, yの組を通る線をプロット
         """
+        if color == 'o':
+            color = (255,165,0)
         if line: #plot lines
             self.p1.addItem(pg.PlotCurveItem(x = x,  y = y, pen=pg.mkPen(color=color)))
         else: # plot points
@@ -59,6 +61,8 @@ class GraphWindow(QMainWindow):
         if rs:
             x = [value[0]*np.cos(value[1]) for value in zip(rs, thetas)]
             y = [value[0]*np.sin(value[1]) for value in zip(rs, thetas)]
+            if color == 'o':
+                color = (255,165,0)
             self.p3.addItem(pg.PlotCurveItem(x=x, y=y, pen=pg.mkPen(color=color)))
         else:
             x = [np.cos(value) for value in thetas]
@@ -84,7 +88,7 @@ class GraphWindow(QMainWindow):
 
 
 class GraphWindow3D(QMainWindow):
-    
+
     def __init__(self, parent = None, title=""):
         super(GraphWindow3D, self).__init__(parent)
 
