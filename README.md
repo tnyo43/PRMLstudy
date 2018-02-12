@@ -11,10 +11,10 @@ Python3.5
 以下requirements.txt参照
 
 ## Usage
-ベータ関数：
+2.1.1 ベータ分布：
   $python BetaFunction.py
 
-ディリクレ分布：
+2.2.1 ディリクレ分布：
   $python DirichletDistribution.py
   
 2.3.6 ガウス分布に対するベイズ推定
